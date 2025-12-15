@@ -72,23 +72,7 @@ Run a single test by name:
 flutter test -p vm --plain-name "calls repository.sendMoney"
 
 5. Directory Structure
-lib/
-├── features/
-│   ├── login/
-│   │   ├── data/
-│   │   ├── domain/
-│   │   └── presentation/
-│   ├── send_page/
-│   │   ├── data/
-│   │   ├── domain/
-│   │   └── presentation/
-│   └── transaction_page/
-├── main.dart
-test/
-├── features/
-│   ├── login/
-│   ├── send_page/
-│   └── transaction_page/
+<img width="410" height="435" alt="image" src="https://github.com/user-attachments/assets/b1fc5e45-274e-412e-941e-181d269a40c5" />
 
 
 data: Models, RemoteDataSources, Repositories
@@ -104,16 +88,10 @@ mocktail is used for mocking repository and remote datasource interactions.
 Freezed is used for immutable states in Cubits, allowing for precise unit tests.
 
 Example Test: SendMoneyUseCase
-test('calls repository.sendMoney with correct value', () async {
-  final mockRepository = MockSendMoneyRepository();
-  final useCase = SendMoneyUseCase(mockRepository);
+<img width="595" height="268" alt="image" src="https://github.com/user-attachments/assets/a2b4fbaf-a5e4-45b6-9915-d2a195b8e2ca" />
 
-  registerFallbackValue(SendNumber(0));
 
-  await useCase(500);
 
-  verify(() => mockRepository.sendMoney(any())).called(1);
-});
 
 7. API Integration
 
