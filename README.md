@@ -1,8 +1,8 @@
-#Flutter Money Transfer App
+# Flutter Money Transfer App
 
 This Flutter project demonstrates a simple money sending and transaction tracking app using Clean Architecture, Bloc/Cubit state management, and unit testing. It includes a local cache and API integration for transactions.
 
-#Features
+## Features
 
 Send Money: Users can enter an amount and submit it. The transaction is saved locally and can optionally be posted to an API.
 
@@ -20,7 +20,7 @@ Freezed: For immutable state management with union types.
 
 Unit Tests: Covers UseCases, Repository implementations, and Cubit logic.
 
-#Getting Started
+## Getting Started
 1. Prerequisites
 
 Flutter SDK: >= 3.0.0
