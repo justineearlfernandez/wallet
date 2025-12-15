@@ -1,10 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:my_app/features/login/domain/entities/user.dart';
-import 'package:my_app/features/login/domain/usecases/login_user.dart';
+import 'package:my_app/features/login/domain/usecases/login_user_usecase.dart';
 import 'package:my_app/features/login/presentation/cubit/login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
-  final LoginUser loginUser;
+  final LoginUserUsecase loginUser;
 
   LoginCubit({required this.loginUser}) : super(LoginState.initial());
 

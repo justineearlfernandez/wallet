@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_app/features/home_page/presentation/pages/home_page.dart';
-import 'package:my_app/features/login/domain/usecases/login_user.dart';
+import 'package:my_app/features/login/domain/usecases/login_user_usecase.dart';
 import 'package:my_app/features/login/presentation/cubit/login_cubit.dart';
 import 'package:my_app/features/login/presentation/cubit/login_state.dart';
 import 'package:my_app/features/login/presentation/widgets/atoms/app_icon.dart';
@@ -35,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => LoginCubit(loginUser: context.read<LoginUser>()),
+      create: (_) => LoginCubit(loginUser: context.read<LoginUserUsecase>()),
       child: BlocConsumer<LoginCubit, LoginState>(
         listener: (context, state) {
           if (state.isSuccess) {

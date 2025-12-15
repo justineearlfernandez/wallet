@@ -3,11 +3,11 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:my_app/features/login/domain/entities/user.dart';
-import 'package:my_app/features/login/domain/usecases/login_user.dart';
+import 'package:my_app/features/login/domain/usecases/login_user_usecase.dart';
 import 'package:my_app/features/login/presentation/cubit/login_cubit.dart';
 import 'package:my_app/features/login/presentation/cubit/login_state.dart';
 
-class MockLoginUser extends Mock implements LoginUser {}
+class MockLoginUser extends Mock implements LoginUserUsecase {}
 class FakeUser extends Fake implements User {}
 
 void main() {

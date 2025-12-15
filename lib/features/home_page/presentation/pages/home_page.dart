@@ -3,8 +3,6 @@ import 'package:my_app/features/home_page/presentation/widgets/organism/balance_
 import 'package:my_app/features/home_page/presentation/widgets/organism/home_actions.dart';
 import 'package:my_app/features/login/presentation/pages/login_page.dart';
 
-
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
