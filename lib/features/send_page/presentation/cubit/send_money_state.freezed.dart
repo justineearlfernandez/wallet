@@ -23,6 +23,8 @@ mixin _$SendMoneyState {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String message) error,
+    required TResult Function(List<Transaction> transactions)
+    transactionsLoaded,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
@@ -30,6 +32,7 @@ mixin _$SendMoneyState {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String message)? error,
+    TResult? Function(List<Transaction> transactions)? transactionsLoaded,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
@@ -37,6 +40,7 @@ mixin _$SendMoneyState {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function(String message)? error,
+    TResult Function(List<Transaction> transactions)? transactionsLoaded,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -45,6 +49,8 @@ mixin _$SendMoneyState {
     required TResult Function(SendMoneyLoading value) loading,
     required TResult Function(SendMoneySuccess value) success,
     required TResult Function(SendMoneyError value) error,
+    required TResult Function(SendMoneyTransactionsLoaded value)
+    transactionsLoaded,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
@@ -52,6 +58,7 @@ mixin _$SendMoneyState {
     TResult? Function(SendMoneyLoading value)? loading,
     TResult? Function(SendMoneySuccess value)? success,
     TResult? Function(SendMoneyError value)? error,
+    TResult? Function(SendMoneyTransactionsLoaded value)? transactionsLoaded,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
@@ -59,6 +66,7 @@ mixin _$SendMoneyState {
     TResult Function(SendMoneyLoading value)? loading,
     TResult Function(SendMoneySuccess value)? success,
     TResult Function(SendMoneyError value)? error,
+    TResult Function(SendMoneyTransactionsLoaded value)? transactionsLoaded,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
 }
@@ -132,6 +140,8 @@ class _$SendMoneyInitialImpl implements SendMoneyInitial {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String message) error,
+    required TResult Function(List<Transaction> transactions)
+    transactionsLoaded,
   }) {
     return initial();
   }
@@ -143,6 +153,7 @@ class _$SendMoneyInitialImpl implements SendMoneyInitial {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String message)? error,
+    TResult? Function(List<Transaction> transactions)? transactionsLoaded,
   }) {
     return initial?.call();
   }
@@ -154,6 +165,7 @@ class _$SendMoneyInitialImpl implements SendMoneyInitial {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function(String message)? error,
+    TResult Function(List<Transaction> transactions)? transactionsLoaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -169,6 +181,8 @@ class _$SendMoneyInitialImpl implements SendMoneyInitial {
     required TResult Function(SendMoneyLoading value) loading,
     required TResult Function(SendMoneySuccess value) success,
     required TResult Function(SendMoneyError value) error,
+    required TResult Function(SendMoneyTransactionsLoaded value)
+    transactionsLoaded,
   }) {
     return initial(this);
   }
@@ -180,6 +194,7 @@ class _$SendMoneyInitialImpl implements SendMoneyInitial {
     TResult? Function(SendMoneyLoading value)? loading,
     TResult? Function(SendMoneySuccess value)? success,
     TResult? Function(SendMoneyError value)? error,
+    TResult? Function(SendMoneyTransactionsLoaded value)? transactionsLoaded,
   }) {
     return initial?.call(this);
   }
@@ -191,6 +206,7 @@ class _$SendMoneyInitialImpl implements SendMoneyInitial {
     TResult Function(SendMoneyLoading value)? loading,
     TResult Function(SendMoneySuccess value)? success,
     TResult Function(SendMoneyError value)? error,
+    TResult Function(SendMoneyTransactionsLoaded value)? transactionsLoaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -251,6 +267,8 @@ class _$SendMoneyLoadingImpl implements SendMoneyLoading {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String message) error,
+    required TResult Function(List<Transaction> transactions)
+    transactionsLoaded,
   }) {
     return loading();
   }
@@ -262,6 +280,7 @@ class _$SendMoneyLoadingImpl implements SendMoneyLoading {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String message)? error,
+    TResult? Function(List<Transaction> transactions)? transactionsLoaded,
   }) {
     return loading?.call();
   }
@@ -273,6 +292,7 @@ class _$SendMoneyLoadingImpl implements SendMoneyLoading {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function(String message)? error,
+    TResult Function(List<Transaction> transactions)? transactionsLoaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -288,6 +308,8 @@ class _$SendMoneyLoadingImpl implements SendMoneyLoading {
     required TResult Function(SendMoneyLoading value) loading,
     required TResult Function(SendMoneySuccess value) success,
     required TResult Function(SendMoneyError value) error,
+    required TResult Function(SendMoneyTransactionsLoaded value)
+    transactionsLoaded,
   }) {
     return loading(this);
   }
@@ -299,6 +321,7 @@ class _$SendMoneyLoadingImpl implements SendMoneyLoading {
     TResult? Function(SendMoneyLoading value)? loading,
     TResult? Function(SendMoneySuccess value)? success,
     TResult? Function(SendMoneyError value)? error,
+    TResult? Function(SendMoneyTransactionsLoaded value)? transactionsLoaded,
   }) {
     return loading?.call(this);
   }
@@ -310,6 +333,7 @@ class _$SendMoneyLoadingImpl implements SendMoneyLoading {
     TResult Function(SendMoneyLoading value)? loading,
     TResult Function(SendMoneySuccess value)? success,
     TResult Function(SendMoneyError value)? error,
+    TResult Function(SendMoneyTransactionsLoaded value)? transactionsLoaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -370,6 +394,8 @@ class _$SendMoneySuccessImpl implements SendMoneySuccess {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String message) error,
+    required TResult Function(List<Transaction> transactions)
+    transactionsLoaded,
   }) {
     return success();
   }
@@ -381,6 +407,7 @@ class _$SendMoneySuccessImpl implements SendMoneySuccess {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String message)? error,
+    TResult? Function(List<Transaction> transactions)? transactionsLoaded,
   }) {
     return success?.call();
   }
@@ -392,6 +419,7 @@ class _$SendMoneySuccessImpl implements SendMoneySuccess {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function(String message)? error,
+    TResult Function(List<Transaction> transactions)? transactionsLoaded,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -407,6 +435,8 @@ class _$SendMoneySuccessImpl implements SendMoneySuccess {
     required TResult Function(SendMoneyLoading value) loading,
     required TResult Function(SendMoneySuccess value) success,
     required TResult Function(SendMoneyError value) error,
+    required TResult Function(SendMoneyTransactionsLoaded value)
+    transactionsLoaded,
   }) {
     return success(this);
   }
@@ -418,6 +448,7 @@ class _$SendMoneySuccessImpl implements SendMoneySuccess {
     TResult? Function(SendMoneyLoading value)? loading,
     TResult? Function(SendMoneySuccess value)? success,
     TResult? Function(SendMoneyError value)? error,
+    TResult? Function(SendMoneyTransactionsLoaded value)? transactionsLoaded,
   }) {
     return success?.call(this);
   }
@@ -429,6 +460,7 @@ class _$SendMoneySuccessImpl implements SendMoneySuccess {
     TResult Function(SendMoneyLoading value)? loading,
     TResult Function(SendMoneySuccess value)? success,
     TResult Function(SendMoneyError value)? error,
+    TResult Function(SendMoneyTransactionsLoaded value)? transactionsLoaded,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -519,6 +551,8 @@ class _$SendMoneyErrorImpl implements SendMoneyError {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String message) error,
+    required TResult Function(List<Transaction> transactions)
+    transactionsLoaded,
   }) {
     return error(message);
   }
@@ -530,6 +564,7 @@ class _$SendMoneyErrorImpl implements SendMoneyError {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String message)? error,
+    TResult? Function(List<Transaction> transactions)? transactionsLoaded,
   }) {
     return error?.call(message);
   }
@@ -541,6 +576,7 @@ class _$SendMoneyErrorImpl implements SendMoneyError {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function(String message)? error,
+    TResult Function(List<Transaction> transactions)? transactionsLoaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -556,6 +592,8 @@ class _$SendMoneyErrorImpl implements SendMoneyError {
     required TResult Function(SendMoneyLoading value) loading,
     required TResult Function(SendMoneySuccess value) success,
     required TResult Function(SendMoneyError value) error,
+    required TResult Function(SendMoneyTransactionsLoaded value)
+    transactionsLoaded,
   }) {
     return error(this);
   }
@@ -567,6 +605,7 @@ class _$SendMoneyErrorImpl implements SendMoneyError {
     TResult? Function(SendMoneyLoading value)? loading,
     TResult? Function(SendMoneySuccess value)? success,
     TResult? Function(SendMoneyError value)? error,
+    TResult? Function(SendMoneyTransactionsLoaded value)? transactionsLoaded,
   }) {
     return error?.call(this);
   }
@@ -578,6 +617,7 @@ class _$SendMoneyErrorImpl implements SendMoneyError {
     TResult Function(SendMoneyLoading value)? loading,
     TResult Function(SendMoneySuccess value)? success,
     TResult Function(SendMoneyError value)? error,
+    TResult Function(SendMoneyTransactionsLoaded value)? transactionsLoaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -597,4 +637,184 @@ abstract class SendMoneyError implements SendMoneyState {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SendMoneyErrorImplCopyWith<_$SendMoneyErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SendMoneyTransactionsLoadedImplCopyWith<$Res> {
+  factory _$$SendMoneyTransactionsLoadedImplCopyWith(
+    _$SendMoneyTransactionsLoadedImpl value,
+    $Res Function(_$SendMoneyTransactionsLoadedImpl) then,
+  ) = __$$SendMoneyTransactionsLoadedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<Transaction> transactions});
+}
+
+/// @nodoc
+class __$$SendMoneyTransactionsLoadedImplCopyWithImpl<$Res>
+    extends
+        _$SendMoneyStateCopyWithImpl<$Res, _$SendMoneyTransactionsLoadedImpl>
+    implements _$$SendMoneyTransactionsLoadedImplCopyWith<$Res> {
+  __$$SendMoneyTransactionsLoadedImplCopyWithImpl(
+    _$SendMoneyTransactionsLoadedImpl _value,
+    $Res Function(_$SendMoneyTransactionsLoadedImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of SendMoneyState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? transactions = null}) {
+    return _then(
+      _$SendMoneyTransactionsLoadedImpl(
+        null == transactions
+            ? _value._transactions
+            : transactions // ignore: cast_nullable_to_non_nullable
+                  as List<Transaction>,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+
+class _$SendMoneyTransactionsLoadedImpl implements SendMoneyTransactionsLoaded {
+  const _$SendMoneyTransactionsLoadedImpl(final List<Transaction> transactions)
+    : _transactions = transactions;
+
+  final List<Transaction> _transactions;
+  @override
+  List<Transaction> get transactions {
+    if (_transactions is EqualUnmodifiableListView) return _transactions;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_transactions);
+  }
+
+  @override
+  String toString() {
+    return 'SendMoneyState.transactionsLoaded(transactions: $transactions)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SendMoneyTransactionsLoadedImpl &&
+            const DeepCollectionEquality().equals(
+              other._transactions,
+              _transactions,
+            ));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    runtimeType,
+    const DeepCollectionEquality().hash(_transactions),
+  );
+
+  /// Create a copy of SendMoneyState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SendMoneyTransactionsLoadedImplCopyWith<_$SendMoneyTransactionsLoadedImpl>
+  get copyWith =>
+      __$$SendMoneyTransactionsLoadedImplCopyWithImpl<
+        _$SendMoneyTransactionsLoadedImpl
+      >(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function(String message) error,
+    required TResult Function(List<Transaction> transactions)
+    transactionsLoaded,
+  }) {
+    return transactionsLoaded(transactions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function(String message)? error,
+    TResult? Function(List<Transaction> transactions)? transactionsLoaded,
+  }) {
+    return transactionsLoaded?.call(transactions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String message)? error,
+    TResult Function(List<Transaction> transactions)? transactionsLoaded,
+    required TResult orElse(),
+  }) {
+    if (transactionsLoaded != null) {
+      return transactionsLoaded(transactions);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SendMoneyInitial value) initial,
+    required TResult Function(SendMoneyLoading value) loading,
+    required TResult Function(SendMoneySuccess value) success,
+    required TResult Function(SendMoneyError value) error,
+    required TResult Function(SendMoneyTransactionsLoaded value)
+    transactionsLoaded,
+  }) {
+    return transactionsLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SendMoneyInitial value)? initial,
+    TResult? Function(SendMoneyLoading value)? loading,
+    TResult? Function(SendMoneySuccess value)? success,
+    TResult? Function(SendMoneyError value)? error,
+    TResult? Function(SendMoneyTransactionsLoaded value)? transactionsLoaded,
+  }) {
+    return transactionsLoaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SendMoneyInitial value)? initial,
+    TResult Function(SendMoneyLoading value)? loading,
+    TResult Function(SendMoneySuccess value)? success,
+    TResult Function(SendMoneyError value)? error,
+    TResult Function(SendMoneyTransactionsLoaded value)? transactionsLoaded,
+    required TResult orElse(),
+  }) {
+    if (transactionsLoaded != null) {
+      return transactionsLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SendMoneyTransactionsLoaded implements SendMoneyState {
+  const factory SendMoneyTransactionsLoaded(
+    final List<Transaction> transactions,
+  ) = _$SendMoneyTransactionsLoadedImpl;
+
+  List<Transaction> get transactions;
+
+  /// Create a copy of SendMoneyState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SendMoneyTransactionsLoadedImplCopyWith<_$SendMoneyTransactionsLoadedImpl>
+  get copyWith => throw _privateConstructorUsedError;
 }

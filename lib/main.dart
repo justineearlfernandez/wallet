@@ -1,48 +1,50 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_app/features/send_page/data/datasources/send_money_remote_ds.dart';
-import 'package:my_app/features/send_page/data/repositories/send_money_repository_impl.dart';
-import 'package:my_app/features/send_page/domain/usecases/send_money_usecase.dart';
-import 'package:my_app/features/send_page/presentation/cubit/send_money_cubit.dart';
-import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
-import 'package:my_app/features/login/presentation/pages/login_page.dart';
 import 'package:my_app/features/login/data/repositories/login_repository_impl.dart';
 import 'package:my_app/features/login/domain/usecases/login_user_usecase.dart';
+import 'package:my_app/features/login/presentation/pages/login_page.dart';
+import 'package:my_app/features/send_page/data/datasources/send_money_remote_ds.dart';
+import 'package:my_app/features/send_page/data/repositories/send_money_repository_impl.dart';
+import 'package:my_app/features/send_page/domain/repositories/send_money_repository.dart';
+import 'package:my_app/features/send_page/domain/usecases/send_money_usecase.dart';
+import 'package:my_app/features/send_page/presentation/cubit/send_money_cubit.dart';
 
 void main() {
   runApp(
-    MultiProvider(
+    MultiRepositoryProvider(
       providers: [
-        // Login providers
-        Provider<LoginRepositoryImpl>(create: (_) => LoginRepositoryImpl()),
-        Provider<LoginUserUsecase>(
-          create: (context) => LoginUserUsecase(context.read<LoginRepositoryImpl>()),
+        // Login dependencies
+        RepositoryProvider<LoginRepositoryImpl>(
+          create: (_) => LoginRepositoryImpl(),
+        ),
+        RepositoryProvider<LoginUserUsecase>(
+          create: (context) =>
+              LoginUserUsecase(context.read<LoginRepositoryImpl>()),
         ),
 
-        // SendNumber providers
-        Provider<SendMoneyRemoteDataSourceImpl>(
+        // SendMoney dependencies
+        RepositoryProvider<SendMoneyRemoteDataSource>(
           create: (_) => SendMoneyRemoteDataSourceImpl(http.Client()),
         ),
-        Provider<SendMoneyRepositoryImpl>(
+        RepositoryProvider<SendMoneyRepository>(
           create: (context) => SendMoneyRepositoryImpl(
-            context.read<SendMoneyRemoteDataSourceImpl>(),
+            context.read<SendMoneyRemoteDataSource>(),
           ),
         ),
-        Provider<SendNumberUseCase>(
+        RepositoryProvider<SendMoneyUseCase>(
           create: (context) =>
-              SendNumberUseCase(context.read<SendMoneyRepositoryImpl>()),
+              SendMoneyUseCase(context.read<SendMoneyRepository>()),
         ),
-       
       ],
-        child: Builder(
-        builder: (context) {
-          return BlocProvider<SendMoneyCubit>(
-            create: (_) =>
-                SendMoneyCubit(context.read<SendNumberUseCase>()),
-            child: const MyApp(),
-          );
-        },
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider<SendMoneyCubit>(
+            create: (context) =>
+                SendMoneyCubit(context.read<SendMoneyRepository>()),
+          ),
+        ],
+        child: const MyApp(),
       ),
     ),
   );

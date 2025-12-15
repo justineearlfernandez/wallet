@@ -15,6 +15,8 @@ class BalanceSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
       children: [
         const AppText('Wallet Balance'),
         WalletBalance(hidden: hidden, onToggle: onToggle),

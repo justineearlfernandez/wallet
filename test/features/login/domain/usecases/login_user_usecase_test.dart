@@ -5,8 +5,6 @@ import 'package:my_app/features/login/domain/entities/user.dart';
 import 'package:my_app/features/login/domain/repositories/login_repository.dart';
 import 'package:my_app/features/login/domain/usecases/login_user_usecase.dart';
 
-
-// 1. Create a mock repository
 class MockLoginRepository extends Mock implements LoginRepository {}
 
 void main() {

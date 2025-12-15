@@ -14,15 +14,18 @@ class WalletBalance extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        AppText(hidden ? '********' : '₱32323.32'),
-        SizedBox(width: 4.0),
-        AppIconButton(icon: 
-        hidden ?   Icons.visibility_off :
-        Icons.visibility, onPressed: onToggle),
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          AppText(hidden ? '********' : '₱3000.32'),
+          SizedBox(width: 4.0),
+          AppIconButton(icon: 
+          hidden ?   Icons.visibility_off :
+          Icons.visibility, onPressed: onToggle),
+        ],
+      ),
     );
   }
 }

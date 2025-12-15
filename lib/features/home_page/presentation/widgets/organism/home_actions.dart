@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_app/features/home_page/presentation/widgets/molecules/action_icon_button.dart';
 import 'package:my_app/features/send_page/domain/entities/send_money.dart';
+import 'package:my_app/features/send_page/presentation/cubit/send_money_state.dart';
 import 'package:my_app/features/send_page/presentation/page/send_page.dart';
 import 'package:my_app/features/send_page/presentation/cubit/send_money_cubit.dart';
 import 'package:my_app/features/transaction_page/presentation/transaction_page.dart';
@@ -39,13 +40,28 @@ class HomeActions extends StatelessWidget {
         ),
         ActionIconButton(
           onPressed: () {
-            final savedNumbers = context.read<SendMoneyCubit>().getSavedNumbers;
-            final List<SendNumber> transactions =
-                savedNumbers ?? <SendNumber>[];
+            context.read<SendMoneyCubit>().fetchTransactions();
+
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (_) => TransactionPage(transactions: transactions),
+                builder: (_) => BlocBuilder<SendMoneyCubit, SendMoneyState>(
+                  builder: (context, state) {
+                    if (state is SendMoneyTransactionsLoaded) {
+                      final transactions = state.transactions
+                          .map((t) => SendNumber(t.value))
+                          .toList();
+
+                      return TransactionPage(transactions: transactions);
+                    } else if (state is SendMoneyLoading) {
+                      return const Center(child: CircularProgressIndicator());
+                    } else if (state is SendMoneyError) {
+                      return Center(child: Text(state.message));
+                    } else {
+                      return const SizedBox.shrink();
+                    }
+                  },
+                ),
               ),
             );
           },
